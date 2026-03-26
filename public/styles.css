@@ -546,12 +546,13 @@ body {
 /* === ROADMAP === */
 .section-roadmap {
   padding: 100px 0;
-  background: linear-gradient(180deg, #ffff8c 0%, #fff 100%);
+  background: #ffff8c;
 }
 
 .roadmap-chart {
   position: relative;
   min-height: 420px;
+  overflow: hidden;
 }
 
 .roadmap-curve {
@@ -568,17 +569,30 @@ body {
   z-index: 1;
   display: flex;
   gap: 32px;
+  align-items: flex-end;
   min-height: 400px;
   padding: 20px 0;
 }
 
 .roadmap-step-card {
   flex: 1;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(6px);
   padding: 28px 24px;
   border-radius: 0;
   border: 1px solid rgba(0,0,0,0.06);
+}
+
+.roadmap-step-card:nth-child(1) {
+  min-height: 180px;
+}
+
+.roadmap-step-card:nth-child(2) {
+  min-height: 240px;
+}
+
+.roadmap-step-card:nth-child(3) {
+  min-height: 300px;
 }
 
 .roadmap-icon {
