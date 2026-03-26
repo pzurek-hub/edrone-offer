@@ -1,0 +1,12 @@
+{
+  "name": "edrone-offer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site, no build needed'"
+  },
+  "dependencies": {
+    "@hubspot/api-client": "^12.0.1"
+  }
+}

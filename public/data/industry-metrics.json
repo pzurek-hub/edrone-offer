@@ -1,0 +1,194 @@
+{
+  "GADGETS_AND_ADVERTISING": {
+    "label": "Gadgets & Advertising",
+    "avg_conversion_change_12m": "18.0%",
+    "aov_change_12m": "31%",
+    "repeat_rate_change_12m": "88%",
+    "conversion_rate_change_12m": "18%",
+    "monthly_revenue_per_1000": "404 zł"
+  },
+  "RELIGIOUS_AND_DEVOTIONAL_ARTICLES": {
+    "label": "Religious & Devotional Articles",
+    "avg_conversion_change_12m": "19.2%",
+    "aov_change_12m": "35%",
+    "repeat_rate_change_12m": "14%",
+    "conversion_rate_change_12m": "19%",
+    "monthly_revenue_per_1000": "591 zł"
+  },
+  "ANIMALS_AND_PET_SUPPLIES": {
+    "label": "Animals & Pet Supplies",
+    "avg_conversion_change_12m": "25.0%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "220%",
+    "conversion_rate_change_12m": "25%",
+    "monthly_revenue_per_1000": "823 zł"
+  },
+  "HEALTH_AND_WELLNESS": {
+    "label": "Health & Wellness",
+    "avg_conversion_change_12m": "27.9%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "180%",
+    "conversion_rate_change_12m": "28%",
+    "monthly_revenue_per_1000": "1 588 zł"
+  },
+  "BUSINESS_AND_INDUSTRY": {
+    "label": "Business & Industry",
+    "avg_conversion_change_12m": "32.9%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "78%",
+    "conversion_rate_change_12m": "33%",
+    "monthly_revenue_per_1000": "1 180 zł"
+  },
+  "TRAVEL_ACCESSORIES": {
+    "label": "Travel Accessories",
+    "avg_conversion_change_12m": "30.7%",
+    "aov_change_12m": "1%",
+    "repeat_rate_change_12m": "82%",
+    "conversion_rate_change_12m": "31%",
+    "monthly_revenue_per_1000": "508 zł"
+  },
+  "ARTICLES_FOR_ADULTS": {
+    "label": "Articles for Adults",
+    "avg_conversion_change_12m": "11.9%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "82%",
+    "conversion_rate_change_12m": "",
+    "monthly_revenue_per_1000": "566 zł"
+  },
+  "KIDS_AND_BABIES": {
+    "label": "Kids & Babies",
+    "avg_conversion_change_12m": "18.3%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "103%",
+    "conversion_rate_change_12m": "18%",
+    "monthly_revenue_per_1000": "1 676 zł"
+  },
+  "OTHER": {
+    "label": "Other",
+    "avg_conversion_change_12m": "14.3%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "255%",
+    "conversion_rate_change_12m": "14%",
+    "monthly_revenue_per_1000": "439 zł"
+  },
+  "EQUIPMENT": {
+    "label": "Equipment",
+    "avg_conversion_change_12m": "36.9%",
+    "aov_change_12m": "21%",
+    "repeat_rate_change_12m": "57%",
+    "conversion_rate_change_12m": "37%",
+    "monthly_revenue_per_1000": "9 470 zł"
+  },
+  "VEHICLES_AND_PARTS": {
+    "label": "Vehicles & Parts",
+    "avg_conversion_change_12m": "34.4%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "78%",
+    "conversion_rate_change_12m": "34%",
+    "monthly_revenue_per_1000": "2 636 zł"
+  },
+  "JEWELRY": {
+    "label": "Jewelry",
+    "avg_conversion_change_12m": "43.4%",
+    "aov_change_12m": "14%",
+    "repeat_rate_change_12m": "38%",
+    "conversion_rate_change_12m": "43%",
+    "monthly_revenue_per_1000": "507 zł"
+  },
+  "ART_AND_ENTERTAINMENT": {
+    "label": "Art & Entertainment",
+    "avg_conversion_change_12m": "11.9%",
+    "aov_change_12m": "30%",
+    "repeat_rate_change_12m": "204%",
+    "conversion_rate_change_12m": "12%",
+    "monthly_revenue_per_1000": "812 zł"
+  },
+  "EVENTS": {
+    "label": "Events",
+    "avg_conversion_change_12m": "11.9%",
+    "aov_change_12m": "22%",
+    "repeat_rate_change_12m": "38%",
+    "conversion_rate_change_12m": "",
+    "monthly_revenue_per_1000": "561 zł"
+  },
+  "CLOTHES_AND_ACCESSORIES": {
+    "label": "Clothes & Accessories",
+    "avg_conversion_change_12m": "33.3%",
+    "aov_change_12m": "7%",
+    "repeat_rate_change_12m": "94%",
+    "conversion_rate_change_12m": "33%",
+    "monthly_revenue_per_1000": "758 zł"
+  },
+  "FURNITURE": {
+    "label": "Furniture",
+    "avg_conversion_change_12m": "30.7%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "59%",
+    "conversion_rate_change_12m": "31%",
+    "monthly_revenue_per_1000": "1 803 zł"
+  },
+  "FOOD_DRINK_AND_TOBACCO": {
+    "label": "Food, Drink & Tobacco",
+    "avg_conversion_change_12m": "47.8%",
+    "aov_change_12m": "48%",
+    "repeat_rate_change_12m": "170%",
+    "conversion_rate_change_12m": "48%",
+    "monthly_revenue_per_1000": "1 366 zł"
+  },
+  "SPORT_EQUIPMENT": {
+    "label": "Sport Equipment",
+    "avg_conversion_change_12m": "37.5%",
+    "aov_change_12m": "3%",
+    "repeat_rate_change_12m": "27%",
+    "conversion_rate_change_12m": "38%",
+    "monthly_revenue_per_1000": "623 zł"
+  },
+  "GAMES_AND_TOYS": {
+    "label": "Games & Toys",
+    "avg_conversion_change_12m": "17.4%",
+    "aov_change_12m": "13%",
+    "repeat_rate_change_12m": "151%",
+    "conversion_rate_change_12m": "17%",
+    "monthly_revenue_per_1000": "709 zł"
+  },
+  "OFFICE_SUPPLIES": {
+    "label": "Office Supplies",
+    "avg_conversion_change_12m": "12.6%",
+    "aov_change_12m": "3%",
+    "repeat_rate_change_12m": "119%",
+    "conversion_rate_change_12m": "13%",
+    "monthly_revenue_per_1000": "894 zł"
+  },
+  "MEDIA": {
+    "label": "Media",
+    "avg_conversion_change_12m": "17.1%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "36%",
+    "conversion_rate_change_12m": "17%",
+    "monthly_revenue_per_1000": "703 zł"
+  },
+  "HOME_AND_GARDEN": {
+    "label": "Home & Garden",
+    "avg_conversion_change_12m": "36.3%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "42%",
+    "conversion_rate_change_12m": "36%",
+    "monthly_revenue_per_1000": "1 093 zł"
+  },
+  "ELECTRONICS": {
+    "label": "Electronics",
+    "avg_conversion_change_12m": "67.8%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "48%",
+    "conversion_rate_change_12m": "68%",
+    "monthly_revenue_per_1000": "1 111 zł"
+  },
+  "HEALTH_AND_BEAUTY": {
+    "label": "Health & Beauty",
+    "avg_conversion_change_12m": "49.0%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "136%",
+    "conversion_rate_change_12m": "49%",
+    "monthly_revenue_per_1000": "837 zł"
+  }
+}
