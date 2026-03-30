@@ -29,9 +29,9 @@ app.get('/api/deal', async (req, res) => {
 
   try {
     const dealProperties = [
-      'dealname', 'industry', 'client_pains', 'client_usps',
-      'meeting_date', 'meeting_link', 'whatsapp_link',
-      'database_size', 'offer_expiry_date', 'hubspot_owner_id'
+      'dealname', 'offer_industry', 'offer_client_pains', 'client_usps',
+      'offer_meeting_date', 'offer_meeting_link', 'whatsapp_link',
+      'offer_database_size', 'offer_expiry_date', 'hubspot_owner_id'
     ].join(',');
 
     const dealRes = await hubspotGet(
@@ -96,24 +96,24 @@ app.get('/api/deal', async (req, res) => {
     }
 
     // Parse multi-select fields
-    const pains = parseMultiSelect(deal.client_pains);
+    const pains = parseMultiSelect(deal.offer_client_pains);
     const usps = parseMultiSelect(deal.client_usps);
 
     const response = {
       company,
       rep,
       deal: {
-        industry: deal.industry || company.industry || 'OTHER',
+        industry: deal.offer_industry || company.industry || 'OTHER',
         pains,
         usps: usps.length > 0 ? usps : [
           'szybka_konfiguracja', 'nieograniczony_dostep', '5_kanalow',
           'transparentny_cennik', 'wsparcie', 'szybki_roi'
         ],
-        meeting_date: deal.meeting_date || '',
-        meeting_link: deal.meeting_link || '',
+        meeting_date: deal.offer_meeting_date || '',
+        meeting_link: deal.offer_meeting_link || '',
         whatsapp_link: deal.whatsapp_link || '',
         expiry_date: deal.offer_expiry_date || '',
-        database_size: parseInt(deal.database_size) || 0
+        database_size: parseInt(deal.offer_database_size) || 0
       },
       line_items: lineItems
     };
