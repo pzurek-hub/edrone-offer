@@ -731,10 +731,17 @@ body {
   opacity: 0.6;
 }
 
-.trusted-logos img {
-  height: 32px;
+.trusted-logos img,
+.trusted-logo-img {
+  height: 36px;
   object-fit: contain;
   filter: grayscale(100%);
+  opacity: 0.8;
+  transition: opacity 0.3s, filter 0.3s;
+}
+.trusted-logo-img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* === PLATFORM REVIEW === */

@@ -50,6 +50,16 @@ const PAIN_LIBRARY = {
     title: "Brak pracy na nieaktywnych klientach",
     description: "Klienci, którzy wcześniej wygenerowali sprzedaż, pozostają bez systematycznej reaktywacji, co oznacza utratę potencjalnego zwrotu z poniesionej inwestycji.",
     icon: "sleep"
+  },
+  "retencja": {
+    title: "Niska retencja klientów",
+    description: "Brak systematycznych działań retencyjnych powoduje, że klienci nie wracają po pierwszym zakupie, a koszt ich pozyskania nie zwraca się.",
+    icon: "repeat"
+  },
+  "niska_konwersja": {
+    title: "Niska konwersja odwiedzających",
+    description: "Znaczna część ruchu na stronie nie przekłada się na zakupy — brak personalizacji i automatycznych reakcji na zachowanie użytkownika obniża skuteczność sprzedaży.",
+    icon: "traffic"
   }
 };
 
@@ -105,6 +115,16 @@ const PMI_LIBRARY = {
     problem: "Dane o zakupach, zachowaniu i komunikacji są w różnych systemach, co utrudnia spójne zarządzanie relacją.",
     mechanism: "Jedno centralne CRM gromadzące dane transakcyjne i behawioralne oraz wspólny silnik segmentacji dla wszystkich kanałów.",
     impact: "Spójna komunikacja i decyzje oparte na pełnym obrazie klienta."
+  },
+  "retencja": {
+    problem: "Klienci kupują raz i nie wracają — brak systematycznych działań retencyjnych sprawia, że koszt pozyskania nie zwraca się.",
+    mechanism: "Automatyczne scenariusze po zakupie, programy lojalnościowe, przypomnienia o ponownym zakupie i reaktywacja nieaktywnych klientów.",
+    impact: "Wyższy wskaźnik powracalności i stabilniejszy przychód z istniejącej bazy klientów."
+  },
+  "niska_konwersja": {
+    problem: "Duża część odwiedzających opuszcza sklep bez zakupu — brak personalizacji i automatycznych reakcji na zachowanie obniża konwersję.",
+    mechanism: "Personalizowane rekomendacje produktowe, pop-upy z ofertami, automatyczne scenariusze reagujące na przeglądane produkty i porzucone procesy.",
+    impact: "Wyższy współczynnik konwersji przy tym samym wolumenie ruchu, co oznacza lepszy zwrot z inwestycji w reklamę."
   }
 };
 

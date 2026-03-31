@@ -86,7 +86,7 @@ async function renderOffer(data) {
   renderCaseStudy(data.deal.industry, metrics);
 
   // --- SLIDE 6: Trusted By ---
-  renderTrustedBy(data.deal.database_size);
+  renderTrustedBy();
 
   // --- SLIDE 8: CTA ---
   setText('cta-rep-name', data.rep.name);
@@ -340,15 +340,23 @@ function renderCaseStudy(industry, metrics) {
 }
 
 // === RENDER TRUSTED BY ===
-function renderTrustedBy(databaseSize) {
+function renderTrustedBy() {
   const container = document.getElementById('trusted-logos');
-  // Placeholder — in production, replace with actual logo URLs
-  const brands = databaseSize > 100000
-    ? ['Brand A', 'Brand B', 'Brand C', 'Brand D', 'Brand E']
-    : ['Industry Brand 1', 'Industry Brand 2', 'Industry Brand 3', 'Industry Brand 4'];
+  const logos = [
+    { name: 'Xiaomi', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/xiaomi.svg' },
+    { name: 'Mosquito', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/mosquito.svg' },
+    { name: 'Organique', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/organique.svg' },
+    { name: 'O bag', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/o-bag.svg' },
+    { name: 'Bielenda', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/logotypy-klienci_bielenda-1.png' },
+    { name: 'Reporter', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/logotypy-klienci_reporter-1.png' },
+    { name: 'Polar Sport', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/logotypy-klienci_polarsport-1.png' },
+    { name: 'iSpot', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/logotypy-klienci_ispot-1.png' },
+    { name: 'Prima Moda', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/logotypy-klienci_primamoda-1.png' },
+    { name: 'Ryłko', url: 'https://wp.edrone.me/wp-content/uploads/2022/08/logotypy-klienci_rylko-1.png' }
+  ];
 
-  container.innerHTML = brands.map(b =>
-    `<span style="font-weight:700;font-size:18px;color:#999">${b}</span>`
+  container.innerHTML = logos.map(l =>
+    `<img src="${l.url}" alt="${l.name}" class="trusted-logo-img">`
   ).join('');
 }
 
