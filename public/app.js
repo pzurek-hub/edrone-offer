@@ -77,7 +77,7 @@ async function renderOffer(data) {
 
   // --- SLIDE 3: Solution + USPs ---
   renderUSPs(data.deal.usps);
-  renderPricing(data.line_items);
+  renderPricing(data.line_items, data.deal.database_size);
 
   // --- PMI Cards ---
   renderPMI(data.deal.pains);
@@ -183,24 +183,78 @@ function renderUSPs(uspKeys) {
 }
 
 // === RENDER PRICING ===
-function renderPricing(lineItems) {
-  if (!lineItems || lineItems.length === 0) return;
+// === PRICING CALCULATOR based on database size ===
+function calculatePrice(dbSize) {
+  const tiers = [
+    { max: 200, price: 0 },
+    { max: 300, price: 120 },
+    { max: 550, price: 215 },
+    { max: 750, price: 295 },
+    { max: 1000, price: 355 },
+    { max: 1150, price: 410 },
+    { max: 1500, price: 450 },
+    { max: 2000, price: 510 },
+    { max: 2250, price: 570 },
+    { max: 3000, price: 680 },
+    { max: 4000, price: 810 },
+    { max: 5000, price: 910 },
+    { max: 5500, price: 995 },
+    { max: 6500, price: 1095 },
+    { max: 7500, price: 1195 },
+    { max: 8500, price: 1295 },
+    { max: 9500, price: 1385 },
+    { max: 10000, price: 1485 }
+  ];
+  if (dbSize > 10000) return { price: null, enterprise: true };
+  for (const tier of tiers) {
+    if (dbSize <= tier.max) return { price: tier.price, enterprise: false };
+  }
+  return { price: null, enterprise: true };
+}
 
-  // Calculate total from line items
-  let total = 0;
+function renderPricing(lineItems, databaseSize) {
   const linesContainer = document.getElementById('pricing-lines');
+  const totalEl = document.getElementById('pricing-total');
+
+  // If line items exist, use them
+  if (lineItems && lineItems.length > 0) {
+    let total = 0;
+    linesContainer.innerHTML = '';
+    lineItems.forEach(item => {
+      const amount = parseFloat(item.amount || item.price || 0);
+      total += amount;
+      const line = document.createElement('div');
+      line.className = 'pricing-line';
+      line.innerHTML = `<span>${item.name || 'Item'}</span><span>${Math.round(amount)} PLN/mo</span>`;
+      linesContainer.appendChild(line);
+    });
+    totalEl.textContent = Math.round(total) + ' PLN';
+    return;
+  }
+
+  // Otherwise calculate from database size
+  if (!databaseSize || databaseSize <= 0) return;
+
+  const result = calculatePrice(databaseSize);
   linesContainer.innerHTML = '';
 
-  lineItems.forEach(item => {
-    const amount = parseFloat(item.amount || item.price || 0);
-    total += amount;
+  if (result.enterprise) {
     const line = document.createElement('div');
     line.className = 'pricing-line';
-    line.innerHTML = `<span>${item.name || 'Item'}</span><span>&euro;${Math.round(amount)}/mo</span>`;
+    line.innerHTML = `<span>Baza: ${databaseSize.toLocaleString('pl-PL')} kontaktów</span><span>Indywidualnie</span>`;
     linesContainer.appendChild(line);
-  });
+    totalEl.textContent = 'Enterprise';
+  } else {
+    const line = document.createElement('div');
+    line.className = 'pricing-line';
+    line.innerHTML = `<span>Licencja edrone (do ${databaseSize.toLocaleString('pl-PL')} kontaktów)</span><span>${result.price} PLN/mo</span>`;
+    linesContainer.appendChild(line);
+    totalEl.textContent = result.price + ' PLN';
+  }
 
-  document.getElementById('pricing-total').textContent = '€' + Math.round(total);
+  // Update the /mo label
+  const moLabel = document.querySelector('.pricing-mo');
+  if (moLabel) moLabel.textContent = '/ mo';
 }
 
 // === RENDER PMI ===
