@@ -233,7 +233,12 @@ function renderPricing(lineItems, databaseSize) {
   }
 
   // Otherwise calculate from database size
-  if (!databaseSize || databaseSize <= 0) return;
+  if (!databaseSize || databaseSize <= 0) {
+    // Fallback: show "contact us" pricing
+    linesContainer.innerHTML = '<div class="pricing-line"><span>Cena ustalana indywidualnie</span></div>';
+    totalEl.textContent = 'Zapytaj';
+    return;
+  }
 
   const result = calculatePrice(databaseSize);
   linesContainer.innerHTML = '';
