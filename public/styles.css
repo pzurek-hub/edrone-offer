@@ -584,15 +584,15 @@ body {
 }
 
 .roadmap-step-card:nth-child(1) {
-  min-height: 180px;
+  transform: translateY(120px);
 }
 
 .roadmap-step-card:nth-child(2) {
-  min-height: 240px;
+  transform: translateY(60px);
 }
 
 .roadmap-step-card:nth-child(3) {
-  min-height: 300px;
+  transform: translateY(0);
 }
 
 .roadmap-icon {
