@@ -583,16 +583,31 @@ body {
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-.roadmap-step-card:nth-child(1) {
-  transform: translateY(120px);
+.roadmap-steps-row > .roadmap-step-card:nth-of-type(1) {
+  transform: translateY(100px);
 }
 
-.roadmap-step-card:nth-child(2) {
-  transform: translateY(60px);
+.roadmap-steps-row > .roadmap-step-card:nth-of-type(2) {
+  transform: translateY(50px);
 }
 
-.roadmap-step-card:nth-child(3) {
+.roadmap-steps-row > .roadmap-step-card:nth-of-type(3) {
   transform: translateY(0);
+}
+
+.roadmap-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  transform: translateY(60px) rotate(-30deg);
+}
+
+.roadmap-arrow-img {
+  width: 36px;
+  height: auto;
+  opacity: 0.8;
 }
 
 .roadmap-icon {
@@ -726,22 +741,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 48px;
   flex-wrap: wrap;
-  opacity: 0.6;
 }
 
 .trusted-logos img,
 .trusted-logo-img {
   height: 36px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: opacity 0.3s, filter 0.3s;
+  filter: brightness(0);
+  transition: opacity 0.3s;
 }
 .trusted-logo-img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+  opacity: 0.7;
 }
 
 /* === PLATFORM REVIEW === */
