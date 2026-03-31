@@ -999,26 +999,42 @@ body {
   }
 
   .cover-title {
-    font-size: 32px;
+    font-size: 28px;
+    line-height: 1.2;
   }
 
   .section-title,
   .section-title-light {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .section-cover {
+    padding: 60px 0 40px;
   }
 
   .solution-layout {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pricing-card {
+    max-width: 100%;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .charts-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .coi-bar {
     flex-direction: column;
-    gap: 32px;
-    padding: 40px 24px;
+    gap: 24px;
+    padding: 32px 20px;
   }
 
   .coi-divider {
@@ -1027,7 +1043,11 @@ body {
   }
 
   .coi-value {
-    font-size: 36px;
+    font-size: 32px;
+  }
+
+  .coi-label {
+    font-size: 13px;
   }
 
   .cta-card,
@@ -1044,6 +1064,16 @@ body {
 
   .pmi-row {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pmi-cell {
+    padding: 20px;
+  }
+
+  .pains-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .roadmap-steps-row {
@@ -1054,10 +1084,20 @@ body {
 
   .roadmap-step-card {
     align-self: stretch !important;
+    transform: none !important;
+    max-width: 100% !important;
+  }
+
+  .roadmap-arrow {
+    display: none;
   }
 
   .roadmap-curve {
     display: none;
+  }
+
+  .section-roadmap {
+    padding: 60px 0;
   }
 
   .hub-diagram {
@@ -1073,6 +1113,58 @@ body {
   }
 
   .nav-inner {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+
+  .btn-signup {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .logo-img {
+    height: 20px;
+  }
+
+  .system-embed {
+    margin: 0 -20px;
+  }
+
+  .system-embed video,
+  .system-embed img {
+    border-radius: 0;
+  }
+
+  .trusted-logos {
+    gap: 24px;
+  }
+
+  .trusted-logo-img {
+    height: 24px;
+  }
+
+  .badge {
+    font-size: 12px;
+  }
+
+  .btn-primary,
+  .btn-dark {
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+  }
+
+  .footer-inner {
+    padding: 24px 0;
+  }
+
+  .section-case-study,
+  .section-solution,
+  .section-diagnosis,
+  .section-coi,
+  .section-pmi,
+  .section-trusted,
+  .section-platform,
+  .section-cta {
+    padding: 60px 0;
   }
 }
