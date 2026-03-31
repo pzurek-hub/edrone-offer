@@ -164,6 +164,44 @@ app.get('/api/deal', async (req, res) => {
   }
 });
 
+// API: Auto-generate offer URL and save to deal + create note
+app.post('/api/generate-offer', express.json(), async (req, res) => {
+  const HUBSPOT_TOKEN = process.env.HUBSPOT_API_KEY;
+  if (!HUBSPOT_TOKEN) return res.status(500).json({ error: 'HubSpot API key not configured' });
+
+  const dealId = req.body?.dealId || req.body?.object?.objectId;
+  if (!dealId) return res.status(400).json({ error: 'Missing dealId' });
+
+  const OFFER_BASE_URL = process.env.OFFER_BASE_URL || 'https://offer.edrone.me';
+  const offerUrl = `${OFFER_BASE_URL}/?deal=${dealId}`;
+
+  try {
+    // 1. Save offer_url to deal
+    await fetch(`https://api.hubapi.com/crm/v3/objects/deals/${dealId}`, {
+      method: 'PATCH',
+      headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ properties: { offer_url: offerUrl } })
+    });
+
+    // 2. Create note on deal with the link
+    const noteBody = `<p><strong>Oferta wygenerowana automatycznie:</strong></p><p><a href="${offerUrl}" target="_blank">${offerUrl}</a></p>`;
+    const noteRes = await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        properties: { hs_note_body: noteBody, hs_timestamp: new Date().toISOString() },
+        associations: [{ to: { id: dealId }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 214 }] }]
+      })
+    });
+
+    console.log(`Offer generated for deal ${dealId}: ${offerUrl}`);
+    return res.status(200).json({ success: true, offer_url: offerUrl });
+  } catch (err) {
+    console.error('Generate offer error:', err);
+    return res.status(500).json({ error: err.message });
+  }
+});
+
 // Fallback — serve index.html for any other route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
