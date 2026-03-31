@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>edrone Proposal</title>
+  <title>edrone Oferta</title>
   <!-- Helvetica is system font on Mac; fallback to Arial/sans-serif on others -->
   <link rel="stylesheet" href="/styles.css?v=2">
 </head>
@@ -11,12 +11,12 @@
   <!-- Loading state -->
   <div id="loading" class="loading-screen">
     <div class="loading-spinner"></div>
-    <p>Loading proposal...</p>
+    <p>Ładowanie oferty...</p>
   </div>
 
   <!-- Error state -->
   <div id="error" class="error-screen" style="display:none">
-    <h2>Could not load proposal</h2>
+    <h2>Nie udało się załadować oferty</h2>
     <p id="error-message"></p>
   </div>
 
@@ -33,7 +33,7 @@
             <span class="logo-text">edrone</span>
           </div>
         </div>
-        <a href="https://control.edrone.me/register/email" target="_blank" class="btn-signup">Sign up</a>
+        <a href="https://control.edrone.me/register/email" target="_blank" class="btn-signup">Zarejestruj się</a>
       </div>
     </nav>
 
@@ -41,8 +41,8 @@
     <section class="section-cover">
       <div class="container">
         <h1 class="cover-title">
-          edrone <span class="text-muted">Proposal</span> for
-          <br><span id="cover-company">[Your Company]</span>
+          edrone <span class="text-muted">Oferta</span> dla
+          <br><span id="cover-company">[Twoja Firma]</span>
         </h1>
         <div class="cover-rep">
           <p id="cover-rep-name" class="rep-name">Marta Kowalska</p>
@@ -50,7 +50,7 @@
             <span id="cover-rep-phone">+48 123 456 789</span> | <span id="cover-rep-email">marta@edrone.me</span>
           </p>
         </div>
-        <a href="#section-diagnosis" class="btn-primary">View Analysis</a>
+        <a href="#section-diagnosis" class="btn-primary">Zobacz analizę</a>
       </div>
     </section>
 
@@ -70,7 +70,7 @@
     <!-- SLIDE 2: DIAGNOSIS + CONSEQUENCES -->
     <section id="section-diagnosis" class="section-diagnosis">
       <div class="container">
-        <h2 class="section-title">How We Understand Your Key Challenges</h2>
+        <h2 class="section-title">Jak rozumiemy Twoje kluczowe wyzwania</h2>
         <div id="pains-grid" class="pains-grid">
           <!-- Populated by JS -->
         </div>
@@ -80,26 +80,26 @@
     <!-- COI: What happens in 12 months -->
     <section class="section-coi">
       <div class="container">
-        <h2 class="section-title">What happens in 12 months if nothing changes?</h2>
+        <h2 class="section-title">Co się stanie w ciągu 12 miesięcy, jeśli nic się nie zmieni?</h2>
         <div class="coi-bar">
           <div class="coi-item">
             <span class="coi-value" id="coi-abandoned">10</span>
-            <span class="coi-label">Abandoned Carts</span>
+            <span class="coi-label">Porzucone koszyki</span>
           </div>
           <div class="coi-divider"></div>
           <div class="coi-item">
             <span class="coi-value" id="coi-revenue-loss">&euro;1.000</span>
-            <span class="coi-label">Monthly Revenue Loss</span>
+            <span class="coi-label">Miesięczna utrata przychodu</span>
           </div>
           <div class="coi-divider"></div>
           <div class="coi-item">
             <span class="coi-value" id="coi-clv">&euro;20K</span>
-            <span class="coi-label">Lost CLV Annually</span>
+            <span class="coi-label">Utracone CLV rocznie</span>
           </div>
           <div class="coi-divider"></div>
           <div class="coi-item">
             <span class="coi-value" id="coi-repeat">1%</span>
-            <span class="coi-label">Unrealized Repeat Purchases</span>
+            <span class="coi-label">Niezrealizowane ponowne zakupy</span>
           </div>
         </div>
       </div>
@@ -108,8 +108,8 @@
     <!-- SLIDE 3: SOLUTION + RTB -->
     <section class="section-solution">
       <div class="container">
-        <span class="badge">Solution</span>
-        <h2 class="section-title">Business Case & Pricing</h2>
+        <span class="badge">Rozwiązanie</span>
+        <h2 class="section-title">Uzasadnienie biznesowe i cennik</h2>
         <div class="solution-layout">
           <div class="solution-visual">
             <div class="pricing-card">
@@ -117,7 +117,7 @@
                 <div class="pricing-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </div>
-                <span class="pricing-title">Monthly License</span>
+                <span class="pricing-title">Licencja miesięczna</span>
               </div>
               <div class="pricing-amount">
                 <span class="pricing-price" id="pricing-total">$0</span>
@@ -125,31 +125,31 @@
               </div>
               <div class="pricing-lines" id="pricing-lines">
                 <div class="pricing-line">
-                  <span>Base License</span>
-                  <span id="pricing-base">&euro;499/mo</span>
+                  <span>Licencja podstawowa</span>
+                  <span id="pricing-base">499 PLN/mo</span>
                 </div>
                 <div class="pricing-line">
-                  <span>Additional SMS Channels</span>
-                  <span id="pricing-sms">&euro;99/mo</span>
+                  <span>Dodatkowe kanały SMS</span>
+                  <span id="pricing-sms">99 PLN/mo</span>
                 </div>
                 <div class="pricing-line">
-                  <span>AI Recommendations</span>
-                  <span id="pricing-ai">&euro;149/mo</span>
+                  <span>Rekomendacje AI</span>
+                  <span id="pricing-ai">149 PLN/mo</span>
                 </div>
               </div>
               <div class="pricing-divider"></div>
               <div class="pricing-features">
                 <div class="pricing-feature">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>1 connected account</span>
+                  <span>1 podłączone konto</span>
                 </div>
                 <div class="pricing-feature">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>30-day notice period</span>
+                  <span>30-dniowy okres wypowiedzenia</span>
                 </div>
                 <div class="pricing-feature">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Monthly or annual billing (15% discount)</span>
+                  <span>Rozliczenie miesięczne lub roczne (15% rabatu)</span>
                 </div>
               </div>
             </div>
@@ -193,8 +193,8 @@
     <!-- PROBLEM → MECHANISM → FINANCIAL IMPACT -->
     <section class="section-pmi">
       <div class="container">
-        <span class="badge">Next Step</span>
-        <h2 class="section-title">Problem &rarr; Mechanism &rarr; Financial Impact</h2>
+        <span class="badge">Następny krok</span>
+        <h2 class="section-title">Problem &rarr; Mechanizm &rarr; Wpływ finansowy</h2>
         <div id="pmi-cards" class="pmi-cards">
           <!-- Populated by JS -->
         </div>
@@ -204,7 +204,7 @@
     <!-- SLIDE 5: IMPLEMENTATION ROADMAP -->
     <section class="section-roadmap">
       <div class="container">
-        <h2 class="section-title">Implementation Roadmap</h2>
+        <h2 class="section-title">Plan wdrożenia</h2>
         <div class="roadmap-chart">
           <svg class="roadmap-curve" viewBox="0 0 1000 400" preserveAspectRatio="none">
             <defs>
@@ -221,25 +221,25 @@
               <div class="roadmap-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
-              <h4>Activation & Kick-off</h4>
-              <p>Start of collaboration, onboarding, technical integration and launch of key automations.</p>
-              <span class="roadmap-badge">0–14 days</span>
+              <h4>Aktywacja i Kick-off</h4>
+              <p>Początek współpracy, onboarding, integracja techniczna i uruchomienie kluczowych automatyzacji.</p>
+              <span class="roadmap-badge">0–14 dni</span>
             </div>
             <div class="roadmap-step-card">
               <div class="roadmap-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
               </div>
               <h4>Mentoring</h4>
-              <p>Team training and advanced strategy implementation.</p>
-              <span class="roadmap-badge">14–30 days</span>
+              <p>Szkolenie zespołu i wdrażanie zaawansowanych strategii.</p>
+              <span class="roadmap-badge">14–30 dni</span>
             </div>
             <div class="roadmap-step-card">
               <div class="roadmap-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               </div>
-              <h4>Success Monitoring</h4>
-              <p>Ongoing performance analysis and optimization.</p>
-              <span class="roadmap-badge">30–90 days</span>
+              <h4>Monitoring sukcesu</h4>
+              <p>Bieżąca analiza wyników i optymalizacja.</p>
+              <span class="roadmap-badge">30–90 dni</span>
             </div>
           </div>
         </div>
@@ -250,51 +250,51 @@
     <section class="section-case-study">
       <div class="container">
         <span class="badge">Case Study</span>
-        <h2 class="section-title">Results Our Clients Achieve</h2>
+        <h2 class="section-title">Wyniki naszych klientów</h2>
         <p id="case-study-text" class="case-study-description"></p>
         <div class="charts-grid">
           <div class="chart-card">
-            <h4>Conversion Rate</h4>
+            <h4>Współczynnik konwersji</h4>
             <div class="chart-bars">
               <div class="chart-bar-group">
                 <span class="bar-value" id="chart-conversion-before-val">1.8%</span>
                 <div class="chart-bar bar-before" id="chart-conversion-before" style="height: 30%"></div>
-                <span class="bar-label">before edrone</span>
+                <span class="bar-label">przed edrone</span>
               </div>
               <div class="chart-bar-group">
                 <span class="bar-value bar-value-after" id="chart-conversion-after-val">3.2%</span>
                 <div class="chart-bar bar-after" id="chart-conversion" style="height: 60%"></div>
-                <span class="bar-label bar-label-after">with edrone</span>
+                <span class="bar-label bar-label-after">z edrone</span>
               </div>
             </div>
           </div>
           <div class="chart-card">
-            <h4>Repeat Rate</h4>
+            <h4>Wskaźnik powtarzalności</h4>
             <div class="chart-bars">
               <div class="chart-bar-group">
                 <span class="bar-value" id="chart-repeat-before-val">12%</span>
                 <div class="chart-bar bar-before" id="chart-repeat-before" style="height: 25%"></div>
-                <span class="bar-label">before edrone</span>
+                <span class="bar-label">przed edrone</span>
               </div>
               <div class="chart-bar-group">
                 <span class="bar-value bar-value-after" id="chart-repeat-after-val">22%</span>
                 <div class="chart-bar bar-after" id="chart-repeat" style="height: 55%"></div>
-                <span class="bar-label bar-label-after">with edrone</span>
+                <span class="bar-label bar-label-after">z edrone</span>
               </div>
             </div>
           </div>
           <div class="chart-card">
-            <h4>AOV Change</h4>
+            <h4>Zmiana AOV</h4>
             <div class="chart-bars">
               <div class="chart-bar-group">
                 <span class="bar-value" id="chart-aov-before-val">0%</span>
                 <div class="chart-bar bar-before" id="chart-aov-before" style="height: 30%"></div>
-                <span class="bar-label">before edrone</span>
+                <span class="bar-label">przed edrone</span>
               </div>
               <div class="chart-bar-group">
                 <span class="bar-value bar-value-after" id="chart-aov-after-val">+7%</span>
                 <div class="chart-bar bar-after" id="chart-aov" style="height: 50%"></div>
-                <span class="bar-label bar-label-after">with edrone</span>
+                <span class="bar-label bar-label-after">z edrone</span>
               </div>
             </div>
           </div>
@@ -305,7 +305,7 @@
     <!-- TRUSTED BY -->
     <section class="section-trusted">
       <div class="container">
-        <h2 class="section-title">Trusted by</h2>
+        <h2 class="section-title">Zaufali nam</h2>
         <div id="trusted-logos" class="trusted-logos">
           <!-- Populated by JS -->
         </div>
@@ -315,8 +315,8 @@
     <!-- SLIDE 7: PLATFORM REVIEW -->
     <section class="section-platform">
       <div class="container">
-        <span class="badge">Platform</span>
-        <h2 class="section-title">Platform Review</h2>
+        <span class="badge">Platforma</span>
+        <h2 class="section-title">Przegląd platformy</h2>
 
         <div class="hub-diagram">
           <!-- SVG Radial Diagram -->
@@ -406,9 +406,9 @@
     <!-- SLIDE 8: CTA -->
     <section class="section-cta">
       <div class="container">
-        <span class="badge">Next Step</span>
-        <h2 class="section-title">Let's Build Growth Together</h2>
-        <p class="cta-subtitle">Let's talk about how edrone can help your store increase revenue from existing customers. You're one step away from meaningful change.</p>
+        <span class="badge">Następny krok</span>
+        <h2 class="section-title">Budujmy razem wzrost</h2>
+        <p class="cta-subtitle">Porozmawiajmy o tym, jak edrone może pomóc Twojemu sklepowi zwiększyć przychody z obecnych klientów. Jesteś o jeden krok od realnej zmiany.</p>
 
         <div class="cta-card">
           <div class="cta-rep-info">
@@ -419,7 +419,7 @@
               <p class="cta-rep-phone" id="cta-rep-phone">+48 123 456 789</p>
             </div>
           </div>
-          <a id="cta-whatsapp" href="#" class="btn-dark" target="_blank">Call on Whatsapp</a>
+          <a id="cta-whatsapp" href="#" class="btn-dark" target="_blank">Zadzwoń na WhatsApp</a>
         </div>
 
         <div class="cta-meeting-card">
@@ -430,7 +430,7 @@
             <p class="meeting-title">edrone x <span id="cta-meeting-company">[company]</span></p>
             <p class="meeting-date" id="cta-meeting-date">12 kwietnia 2026, online</p>
           </div>
-          <a id="cta-meeting-link" href="#" class="btn-dark" target="_blank">Join the meeting</a>
+          <a id="cta-meeting-link" href="#" class="btn-dark" target="_blank">Dołącz do spotkania</a>
         </div>
       </div>
     </section>
