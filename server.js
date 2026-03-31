@@ -63,7 +63,7 @@ app.get('/api/deal', async (req, res) => {
     const dealProperties = [
       'dealname', 'offer_industry', 'offer_client_pains', 'client_usps',
       'offer_meeting_date', 'offer_meeting_link', 'whatsapp_link',
-      'offer_database_size', 'offer_expiry_date', 'hubspot_owner_id'
+      'offer_database_size', 'offer_expiry_date', 'hubspot_owner_id', 'offer_url'
     ].join(',');
 
     const dealRes = await hubspotGet(
@@ -155,6 +155,33 @@ app.get('/api/deal', async (req, res) => {
       },
       line_items: lineItems
     };
+
+    // Auto-save offer_url to deal + create note (only once, if not already set)
+    const OFFER_BASE_URL = process.env.OFFER_BASE_URL || 'https://offer.edrone.me';
+    const offerUrl = `${OFFER_BASE_URL}/?deal=${id}`;
+    if (!deal.offer_url) {
+      try {
+        // Save offer_url property
+        await fetch(`https://api.hubapi.com/crm/v3/objects/deals/${id}`, {
+          method: 'PATCH',
+          headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ properties: { offer_url: offerUrl } })
+        });
+        // Create note on deal
+        const noteBody = `<p><strong>Oferta wygenerowana:</strong></p><p><a href="${offerUrl}" target="_blank">${offerUrl}</a></p>`;
+        await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            properties: { hs_note_body: noteBody, hs_timestamp: new Date().toISOString() },
+            associations: [{ to: { id: id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 214 }] }]
+          })
+        });
+        console.log(`Auto-saved offer link for deal ${id}`);
+      } catch (e) {
+        console.warn('Could not auto-save offer link:', e.message);
+      }
+    }
 
     return res.status(200).json(response);
 
