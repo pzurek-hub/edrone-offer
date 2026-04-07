@@ -5,7 +5,11 @@
     "aov_change_12m": "31%",
     "repeat_rate_change_12m": "88%",
     "conversion_rate_change_12m": "18%",
-    "monthly_revenue_per_1000": "404 zł"
+    "monthly_revenue_per_1000": "404 zł",
+    "top_client": {
+      "name": "megakoszulki.pl",
+      "domain": "https://megakoszulki.pl"
+    }
   },
   "RELIGIOUS_AND_DEVOTIONAL_ARTICLES": {
     "label": "Religious & Devotional Articles",
@@ -13,7 +17,11 @@
     "aov_change_12m": "35%",
     "repeat_rate_change_12m": "14%",
     "conversion_rate_change_12m": "19%",
-    "monthly_revenue_per_1000": "591 zł"
+    "monthly_revenue_per_1000": "591 zł",
+    "top_client": {
+      "name": "alechrzest.pl",
+      "domain": "https://alechrzest.pl"
+    }
   },
   "ANIMALS_AND_PET_SUPPLIES": {
     "label": "Animals & Pet Supplies",
@@ -21,7 +29,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "220%",
     "conversion_rate_change_12m": "25%",
-    "monthly_revenue_per_1000": "823 zł"
+    "monthly_revenue_per_1000": "823 zł",
+    "top_client": {
+      "name": "zooart.com.eu",
+      "domain": "https://zooart.com.pl"
+    }
   },
   "HEALTH_AND_WELLNESS": {
     "label": "Health & Wellness",
@@ -29,15 +41,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "180%",
     "conversion_rate_change_12m": "28%",
-    "monthly_revenue_per_1000": "1 588 zł"
-  },
-  "BUSINESS_AND_INDUSTRY": {
-    "label": "Business & Industry",
-    "avg_conversion_change_12m": "32.9%",
-    "aov_change_12m": "10%",
-    "repeat_rate_change_12m": "78%",
-    "conversion_rate_change_12m": "33%",
-    "monthly_revenue_per_1000": "1 180 zł"
+    "monthly_revenue_per_1000": "1 588 zł",
+    "top_client": {
+      "name": "4fizjo.pl",
+      "domain": "https://4fizjo.pl/"
+    }
   },
   "TRAVEL_ACCESSORIES": {
     "label": "Travel Accessories",
@@ -45,7 +53,11 @@
     "aov_change_12m": "1%",
     "repeat_rate_change_12m": "82%",
     "conversion_rate_change_12m": "31%",
-    "monthly_revenue_per_1000": "508 zł"
+    "monthly_revenue_per_1000": "508 zł",
+    "top_client": {
+      "name": "prezentmarzen.com",
+      "domain": "https://prezentmarzen.com"
+    }
   },
   "ARTICLES_FOR_ADULTS": {
     "label": "Articles for Adults",
@@ -53,7 +65,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "82%",
     "conversion_rate_change_12m": "",
-    "monthly_revenue_per_1000": "566 zł"
+    "monthly_revenue_per_1000": "566 zł",
+    "top_client": {
+      "name": "bron.pl",
+      "domain": "https://www.bron.pl"
+    }
   },
   "KIDS_AND_BABIES": {
     "label": "Kids & Babies",
@@ -61,7 +77,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "103%",
     "conversion_rate_change_12m": "18%",
-    "monthly_revenue_per_1000": "1 676 zł"
+    "monthly_revenue_per_1000": "1 676 zł",
+    "top_client": {
+      "name": "babyhit.pl",
+      "domain": "https://babyhit.pl/"
+    }
   },
   "OTHER": {
     "label": "Other",
@@ -69,7 +89,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "255%",
     "conversion_rate_change_12m": "14%",
-    "monthly_revenue_per_1000": "439 zł"
+    "monthly_revenue_per_1000": "439 zł",
+    "top_client": {
+      "name": "emka-sklep.com.pl",
+      "domain": "https://emka-sklep.com.pl/"
+    }
   },
   "EQUIPMENT": {
     "label": "Equipment",
@@ -77,7 +101,11 @@
     "aov_change_12m": "21%",
     "repeat_rate_change_12m": "57%",
     "conversion_rate_change_12m": "37%",
-    "monthly_revenue_per_1000": "9 470 zł"
+    "monthly_revenue_per_1000": "9 470 zł",
+    "top_client": {
+      "name": "sklep.vileda.pl",
+      "domain": "https://www.sklep.vileda.pl/"
+    }
   },
   "VEHICLES_AND_PARTS": {
     "label": "Vehicles & Parts",
@@ -85,7 +113,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "78%",
     "conversion_rate_change_12m": "34%",
-    "monthly_revenue_per_1000": "2 636 zł"
+    "monthly_revenue_per_1000": "2 636 zł",
+    "top_client": {
+      "name": "ucando.pl",
+      "domain": "https://ucando.pl"
+    }
   },
   "JEWELRY": {
     "label": "Jewelry",
@@ -93,7 +125,11 @@
     "aov_change_12m": "14%",
     "repeat_rate_change_12m": "38%",
     "conversion_rate_change_12m": "43%",
-    "monthly_revenue_per_1000": "507 zł"
+    "monthly_revenue_per_1000": "507 zł",
+    "top_client": {
+      "name": "love-lilou.vercel.app",
+      "domain": "https://lilou.pl/"
+    }
   },
   "ART_AND_ENTERTAINMENT": {
     "label": "Art & Entertainment",
@@ -101,7 +137,11 @@
     "aov_change_12m": "30%",
     "repeat_rate_change_12m": "204%",
     "conversion_rate_change_12m": "12%",
-    "monthly_revenue_per_1000": "812 zł"
+    "monthly_revenue_per_1000": "812 zł",
+    "top_client": {
+      "name": "bilety24.pl",
+      "domain": "https://bilety24.pl"
+    }
   },
   "EVENTS": {
     "label": "Events",
@@ -109,7 +149,11 @@
     "aov_change_12m": "22%",
     "repeat_rate_change_12m": "38%",
     "conversion_rate_change_12m": "",
-    "monthly_revenue_per_1000": "561 zł"
+    "monthly_revenue_per_1000": "561 zł",
+    "top_client": {
+      "name": "laserdelux.pl",
+      "domain": "https://laserdelux.pl"
+    }
   },
   "CLOTHES_AND_ACCESSORIES": {
     "label": "Clothes & Accessories",
@@ -117,7 +161,11 @@
     "aov_change_12m": "7%",
     "repeat_rate_change_12m": "94%",
     "conversion_rate_change_12m": "33%",
-    "monthly_revenue_per_1000": "758 zł"
+    "monthly_revenue_per_1000": "758 zł",
+    "top_client": {
+      "name": "mosquito-sklep.pl",
+      "domain": "https://mosquito-sklep.pl"
+    }
   },
   "FURNITURE": {
     "label": "Furniture",
@@ -125,7 +173,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "59%",
     "conversion_rate_change_12m": "31%",
-    "monthly_revenue_per_1000": "1 803 zł"
+    "monthly_revenue_per_1000": "1 803 zł",
+    "top_client": {
+      "name": "meblemwm.pl",
+      "domain": "https://meblemwm.pl/"
+    }
   },
   "FOOD_DRINK_AND_TOBACCO": {
     "label": "Food, Drink & Tobacco",
@@ -133,7 +185,11 @@
     "aov_change_12m": "48%",
     "repeat_rate_change_12m": "170%",
     "conversion_rate_change_12m": "48%",
-    "monthly_revenue_per_1000": "1 366 zł"
+    "monthly_revenue_per_1000": "1 366 zł",
+    "top_client": {
+      "name": "marketbio.pl",
+      "domain": "https://marketbio.pl/"
+    }
   },
   "SPORT_EQUIPMENT": {
     "label": "Sport Equipment",
@@ -141,7 +197,11 @@
     "aov_change_12m": "3%",
     "repeat_rate_change_12m": "27%",
     "conversion_rate_change_12m": "38%",
-    "monthly_revenue_per_1000": "623 zł"
+    "monthly_revenue_per_1000": "623 zł",
+    "top_client": {
+      "name": "bushido-sport.pl",
+      "domain": "https://bushido-sport.pl/"
+    }
   },
   "GAMES_AND_TOYS": {
     "label": "Games & Toys",
@@ -149,7 +209,11 @@
     "aov_change_12m": "13%",
     "repeat_rate_change_12m": "151%",
     "conversion_rate_change_12m": "17%",
-    "monthly_revenue_per_1000": "709 zł"
+    "monthly_revenue_per_1000": "709 zł",
+    "top_client": {
+      "name": "muve.pl",
+      "domain": "https://muve.pl"
+    }
   },
   "OFFICE_SUPPLIES": {
     "label": "Office Supplies",
@@ -157,7 +221,11 @@
     "aov_change_12m": "3%",
     "repeat_rate_change_12m": "119%",
     "conversion_rate_change_12m": "13%",
-    "monthly_revenue_per_1000": "894 zł"
+    "monthly_revenue_per_1000": "894 zł",
+    "top_client": {
+      "name": "sklep-ppoz.pl",
+      "domain": "https://sklep-ppoz.pl/"
+    }
   },
   "MEDIA": {
     "label": "Media",
@@ -165,7 +233,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "36%",
     "conversion_rate_change_12m": "17%",
-    "monthly_revenue_per_1000": "703 zł"
+    "monthly_revenue_per_1000": "703 zł",
+    "top_client": {
+      "name": "https://swiatksiazki.pl/",
+      "domain": "https://swiatksiazki.pl/"
+    }
   },
   "HOME_AND_GARDEN": {
     "label": "Home & Garden",
@@ -173,7 +245,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "42%",
     "conversion_rate_change_12m": "36%",
-    "monthly_revenue_per_1000": "1 093 zł"
+    "monthly_revenue_per_1000": "1 093 zł",
+    "top_client": {
+      "name": "lozkoholicy.pl",
+      "domain": "https://www.lozkoholicy.pl/"
+    }
   },
   "ELECTRONICS": {
     "label": "Electronics",
@@ -181,7 +257,11 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "48%",
     "conversion_rate_change_12m": "68%",
-    "monthly_revenue_per_1000": "1 111 zł"
+    "monthly_revenue_per_1000": "1 111 zł",
+    "top_client": {
+      "name": "mi-store.pl",
+      "domain": "https://mi-store.pl/"
+    }
   },
   "HEALTH_AND_BEAUTY": {
     "label": "Health & Beauty",
@@ -189,6 +269,30 @@
     "aov_change_12m": "10%",
     "repeat_rate_change_12m": "136%",
     "conversion_rate_change_12m": "49%",
-    "monthly_revenue_per_1000": "837 zł"
+    "monthly_revenue_per_1000": "837 zł",
+    "top_client": {
+      "name": "madeinlab.pl",
+      "domain": "https://madeinlab.pl/"
+    }
+  },
+  "BUSINESS_AND_INDUSTRIAL": {
+    "label": "Business & Industrial",
+    "avg_conversion_change_12m": "32.9%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "78%",
+    "conversion_rate_change_12m": "33%",
+    "monthly_revenue_per_1000": "1 180 zł",
+    "top_client": {
+      "name": "eltrox.pl",
+      "domain": "https://www.eltrox.pl"
+    }
+  },
+  "SOFTWARE": {
+    "label": "Software",
+    "avg_conversion_change_12m": "25.0%",
+    "aov_change_12m": "10%",
+    "repeat_rate_change_12m": "80%",
+    "conversion_rate_change_12m": "25%",
+    "monthly_revenue_per_1000": "900 zł"
   }
 }

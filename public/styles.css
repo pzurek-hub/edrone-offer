@@ -719,6 +719,31 @@ body {
   color: #888;
 }
 
+/* === TOP CLIENT === */
+.top-client {
+  margin-top: 40px;
+  padding: 20px 28px;
+  background: #ffff8c;
+  text-align: center;
+  font-size: 15px;
+}
+
+.top-client-label {
+  font-weight: 400;
+  color: #333;
+}
+
+.top-client-link {
+  font-weight: 800;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+}
+
+.top-client-link:hover {
+  opacity: 0.7;
+}
+
 /* === TRUSTED BY === */
 .section-trusted {
   padding: 80px 0;

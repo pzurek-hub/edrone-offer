@@ -342,6 +342,15 @@ function renderCaseStudy(industry, metrics) {
       document.getElementById('chart-aov-after-val').textContent = '+' + change + '%';
     }
   }
+
+  // Top performing client
+  if (metrics.top_client && metrics.top_client.name) {
+    const topEl = document.getElementById('top-client');
+    if (topEl) {
+      topEl.innerHTML = `<span class="top-client-label">Najlepszy wynik w Twojej branży:</span> <a href="${metrics.top_client.domain}" target="_blank" class="top-client-link">${metrics.top_client.name}</a>`;
+      topEl.style.display = 'block';
+    }
+  }
 }
 
 // === RENDER TRUSTED BY ===
