@@ -183,29 +183,47 @@ function renderUSPs(uspKeys) {
 }
 
 // === RENDER PRICING ===
-// === PRICING CALCULATOR based on database size ===
+// === PRICING CALCULATOR based on database size (EDF0226HQ) ===
 function calculatePrice(dbSize) {
   const tiers = [
-    { max: 200, price: 0 },
-    { max: 300, price: 120 },
-    { max: 550, price: 215 },
-    { max: 750, price: 295 },
-    { max: 1000, price: 355 },
-    { max: 1150, price: 410 },
-    { max: 1500, price: 450 },
-    { max: 2000, price: 510 },
-    { max: 2250, price: 570 },
-    { max: 3000, price: 680 },
-    { max: 4000, price: 810 },
-    { max: 5000, price: 910 },
-    { max: 5500, price: 995 },
-    { max: 6500, price: 1095 },
-    { max: 7500, price: 1195 },
-    { max: 8500, price: 1295 },
-    { max: 9500, price: 1385 },
-    { max: 10000, price: 1485 }
+    { max: 250, price: 100 }, { max: 300, price: 120 }, { max: 350, price: 140 },
+    { max: 400, price: 160 }, { max: 450, price: 180 }, { max: 500, price: 195 },
+    { max: 550, price: 215 }, { max: 600, price: 235 }, { max: 650, price: 255 },
+    { max: 700, price: 275 }, { max: 750, price: 295 }, { max: 800, price: 315 },
+    { max: 850, price: 335 }, { max: 900, price: 355 }, { max: 950, price: 375 },
+    { max: 1000, price: 390 }, { max: 1150, price: 410 }, { max: 1300, price: 440 },
+    { max: 1450, price: 465 }, { max: 1600, price: 490 }, { max: 1750, price: 515 },
+    { max: 2000, price: 540 }, { max: 2250, price: 570 }, { max: 2500, price: 595 },
+    { max: 2750, price: 620 }, { max: 3000, price: 645 }, { max: 3250, price: 705 },
+    { max: 3500, price: 750 }, { max: 3750, price: 800 }, { max: 4000, price: 845 },
+    { max: 4500, price: 900 }, { max: 5000, price: 945 }, { max: 5500, price: 995 },
+    { max: 6000, price: 1040 }, { max: 6500, price: 1095 }, { max: 7000, price: 1140 },
+    { max: 7500, price: 1190 }, { max: 8000, price: 1235 }, { max: 8500, price: 1290 },
+    { max: 9000, price: 1335 }, { max: 9500, price: 1385 }, { max: 10000, price: 1430 },
+    { max: 11000, price: 1485 }, { max: 12000, price: 1530 }, { max: 13000, price: 1580 },
+    { max: 14000, price: 1625 }, { max: 15000, price: 1680 }, { max: 16000, price: 1725 },
+    { max: 17000, price: 1775 }, { max: 18000, price: 1820 }, { max: 19000, price: 1875 },
+    { max: 20000, price: 1920 }, { max: 22000, price: 1970 }, { max: 24000, price: 2015 },
+    { max: 26000, price: 2070 }, { max: 28000, price: 2115 }, { max: 30000, price: 2165 },
+    { max: 32000, price: 2210 }, { max: 34000, price: 2265 }, { max: 36000, price: 2310 },
+    { max: 38000, price: 2360 }, { max: 40000, price: 2405 }, { max: 42000, price: 2460 },
+    { max: 44000, price: 2505 }, { max: 46000, price: 2555 }, { max: 48000, price: 2600 },
+    { max: 50000, price: 2680 }, { max: 52500, price: 2745 }, { max: 55000, price: 2810 },
+    { max: 57500, price: 2875 }, { max: 60000, price: 2940 }, { max: 62500, price: 3005 },
+    { max: 65000, price: 3070 }, { max: 67500, price: 3135 }, { max: 70000, price: 3200 },
+    { max: 72500, price: 3265 }, { max: 75000, price: 3330 }, { max: 77500, price: 3395 },
+    { max: 80000, price: 3460 }, { max: 82500, price: 3525 }, { max: 85000, price: 3590 },
+    { max: 87500, price: 3655 }, { max: 90000, price: 3720 }, { max: 92500, price: 3785 },
+    { max: 95000, price: 3850 }, { max: 97500, price: 3915 }, { max: 100000, price: 3980 },
+    { max: 105000, price: 4045 }, { max: 110000, price: 4110 }, { max: 115000, price: 4175 },
+    { max: 120000, price: 4240 }, { max: 125000, price: 4305 }, { max: 130000, price: 4370 },
+    { max: 135000, price: 4435 }, { max: 140000, price: 4500 }, { max: 145000, price: 4565 },
+    { max: 150000, price: 4630 }, { max: 200000, price: 5280 }, { max: 250000, price: 5605 },
+    { max: 300000, price: 5930 }, { max: 350000, price: 6255 }, { max: 400000, price: 6580 },
+    { max: 450000, price: 6905 }, { max: 500000, price: 7230 }, { max: 600000, price: 7555 },
+    { max: 700000, price: 7880 }, { max: 800000, price: 8205 }, { max: 900000, price: 8530 },
+    { max: 1000000, price: 8855 }, { max: 1200000, price: 9505 }
   ];
-  if (dbSize > 10000) return { price: null, enterprise: true };
   for (const tier of tiers) {
     if (dbSize <= tier.max) return { price: tier.price, enterprise: false };
   }

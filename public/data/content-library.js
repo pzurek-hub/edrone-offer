@@ -159,7 +159,7 @@ const USP_LIBRARY = {
 // === CASE STUDY TEMPLATES ===
 const CASE_STUDIES = {
   "default": {
-    text: "Our clients in the ecommerce industry see significant improvements in conversion rates, repeat purchases, and average order value within the first 12 months of using edrone. The results below show typical performance uplift based on industry benchmarks.",
+    text: "Nasi klienci z branży e-commerce notują znaczące poprawy współczynnika konwersji, powracalności klientów i średniej wartości zamówienia w ciągu pierwszych 12 miesięcy korzystania z edrone. Poniższe wyniki pokazują typowy wzrost wydajności w oparciu o benchmarki branżowe.",
     conversion_before: 1.8,
     conversion_after: 3.2,
     repeat_before: 12,
