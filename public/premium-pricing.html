@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edrone — Funkcje Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* === RESET & BASE === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-yellow: #FFFF8C;
+            --color-lemon: #FFFF00;
+            --color-black: #000000;
+            --color-jet: #2D2D29;
+            --color-white: #FFFFFF;
+            --color-ghostwhite: #F5F3F6;
+            --color-turquoise: #00FFE9;
+            --color-lightgrey: #E5E5E5;
+            --color-orange: #FFA777;
+            --color-blue: #45B6DB;
+            --color-violet: #AC81DB;
+            --border-radius: 0px;
+            --shadow-card: rgba(0, 0, 0, 0.2) 0px 20px 50px -10px;
+            --grid-max-width: 1420px;
+            --grid-space: 60px;
+            --grid-gap: 32px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.4;
+            color: var(--color-jet);
+            background: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === SECTION WRAPPER === */
+        .premium-section {
+            background: var(--color-white);
+            padding: 100px var(--grid-space) 120px;
+        }
+
+        .premium-inner {
+            max-width: var(--grid-max-width);
+            margin: 0 auto;
+        }
+
+        /* === SECTION HEADER === */
+        .premium-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: var(--color-lemon);
+            color: var(--color-jet);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px 14px;
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .premium-header h2 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 51px;
+            font-weight: 700;
+            line-height: 56px;
+            letter-spacing: -0.9px;
+            color: var(--color-jet);
+            margin-bottom: 20px;
+        }
+
+        .premium-header p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 30px;
+            letter-spacing: 0.1px;
+            color: var(--color-jet);
+            max-width: 680px;
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+
+        /* === CARDS GRID === */
+        .premium-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--grid-gap);
+        }
+
+        /* === SINGLE CARD === */
+        .premium-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Card Top Accent */
+        .card-accent {
+            height: 6px;
+        }
+
+        .card-accent--chat {
+            background: var(--color-turquoise);
+        }
+
+        .card-accent--reviews {
+            background: var(--color-violet);
+        }
+
+        /* Card Content */
+        .card-body {
+            padding: 48px 48px 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .card-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .card-name {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--color-jet);
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
+
+        .card-tagline {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+            color: var(--color-jet);
+            opacity: 0.7;
+            margin-bottom: 32px;
+        }
+
+        /* Pricing Block */
+        .card-pricing {
+            background: var(--color-ghostwhite);
+            border-radius: var(--border-radius);
+            padding: 28px 32px;
+            margin-bottom: 32px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .price-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .price-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--color-jet);
+            line-height: 1;
+        }
+
+        .price-unit {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-jet);
+            opacity: 0.6;
+        }
+
+        .price-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-jet);
+            opacity: 0.5;
+            margin-bottom: 16px;
+        }
+
+        .price-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--color-lightgrey);
+            margin: 16px 0;
+        }
+
+        .price-plus {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-jet);
+            opacity: 0.3;
+            margin: 0 4px;
+        }
+
+        /* Benefits List */
+        .card-benefits {
+            list-style: none;
+            margin-bottom: 32px;
+            flex: 1;
+        }
+
+        .card-benefits li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--color-jet);
+        }
+
+        .card-benefits li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--color-lemon);
+            border-radius: var(--border-radius);
+        }
+
+        .card-benefits li strong {
+            font-weight: 700;
+        }
+
+        /* Benchmarks */
+        .card-benchmarks {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .benchmark {
+            flex: 1;
+            background: var(--color-ghostwhite);
+            border-radius: var(--border-radius);
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .benchmark-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-jet);
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+
+        .benchmark-value--chat {
+            color: #009E8C;
+        }
+
+        .benchmark-value--reviews {
+            color: #8B5DC8;
+        }
+
+        .benchmark-label {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--color-jet);
+            opacity: 0.6;
+            line-height: 1.3;
+        }
+
+        /* Card Footer */
+        .card-footer {
+            padding: 0 48px 48px;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-black);
+            color: var(--color-white);
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 13px 32px;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .cta-primary:hover {
+            background: var(--color-jet);
+        }
+
+        .cta-primary .arrow {
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+
+        .cta-primary:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* "Platisz tylko za wartosc" note */
+        .card-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--color-ghostwhite);
+            border-left: 3px solid var(--color-lemon);
+            padding: 16px 20px;
+            margin-bottom: 32px;
+        }
+
+        .card-note p {
+            font-size: 14px;
+            line-height: 22px;
+            color: var(--color-jet);
+        }
+
+        .card-note strong {
+            font-weight: 700;
+        }
+
+        /* === HOW IT WORKS SECTION === */
+        .how-section {
+            background: var(--color-ghostwhite);
+            padding: 100px var(--grid-space);
+        }
+
+        .how-inner {
+            max-width: var(--grid-max-width);
+            margin: 0 auto;
+        }
+
+        .how-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .how-header h3 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--color-jet);
+            margin-bottom: 16px;
+        }
+
+        .how-header p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+            color: var(--color-jet);
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--grid-gap);
+        }
+
+        .how-step {
+            text-align: center;
+            padding: 40px 32px;
+        }
+
+        .how-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--color-lemon);
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-jet);
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+        }
+
+        .how-step h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-jet);
+            margin-bottom: 12px;
+        }
+
+        .how-step p {
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--color-jet);
+            opacity: 0.7;
+        }
+
+        /* === EXAMPLE CALC SECTION === */
+        .example-section {
+            background: var(--color-black);
+            padding: 80px var(--grid-space);
+        }
+
+        .example-inner {
+            max-width: var(--grid-max-width);
+            margin: 0 auto;
+        }
+
+        .example-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .example-header h3 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 12px;
+        }
+
+        .example-header p {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--color-white);
+            opacity: 0.5;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--grid-gap);
+        }
+
+        .example-card {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--border-radius);
+            padding: 40px;
+        }
+
+        .example-card-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-white);
+            opacity: 0.4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .example-card-title {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 24px;
+        }
+
+        .example-card-title span {
+            color: var(--color-yellow);
+        }
+
+        .example-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .example-row:last-child {
+            border-bottom: none;
+        }
+
+        .example-row-label {
+            font-size: 15px;
+            color: var(--color-white);
+            opacity: 0.6;
+        }
+
+        .example-row-value {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-white);
+        }
+
+        .example-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .example-total-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--color-white);
+        }
+
+        .example-total-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-yellow);
+        }
+
+        .example-total-unit {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.5;
+            color: var(--color-white);
+        }
+
+        /* === FINAL CTA === */
+        .final-cta-section {
+            background: var(--color-yellow);
+            padding: 80px var(--grid-space);
+            text-align: center;
+        }
+
+        .final-cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta-inner h3 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--color-jet);
+            margin-bottom: 16px;
+        }
+
+        .final-cta-inner p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+            color: var(--color-jet);
+            opacity: 0.7;
+            margin-bottom: 36px;
+        }
+
+        .cta-black {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-black);
+            color: var(--color-white);
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 13px 32px;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .cta-black:hover {
+            background: var(--color-jet);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 1024px) {
+            .premium-section { padding: 80px 32px 100px; }
+            .how-section { padding: 80px 32px; }
+            .example-section { padding: 60px 32px; }
+            .final-cta-section { padding: 60px 32px; }
+            .premium-header h2 { font-size: 40px; line-height: 44px; }
+            .card-body { padding: 36px 36px 32px; }
+            .card-footer { padding: 0 36px 36px; }
+            .card-benchmarks { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            .premium-cards { grid-template-columns: 1fr; }
+            .how-grid { grid-template-columns: 1fr; }
+            .example-grid { grid-template-columns: 1fr; }
+            .premium-header h2 { font-size: 32px; line-height: 36px; }
+            .how-header h3, .example-header h3, .final-cta-inner h3 { font-size: 28px; }
+            .card-name { font-size: 28px; }
+            .card-benchmarks { flex-direction: row; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- PREMIUM ADD-ONS SECTION                    -->
+<!-- Paste into edrone.me/pl/cennik             -->
+<!-- ========================================== -->
+
+<!-- SECTION 1: Premium Features Cards -->
+<section class="premium-section">
+    <div class="premium-inner">
+
+        <div class="premium-header">
+            <span class="premium-badge">PREMIUM</span>
+            <h2>Rozszerz swoje mozliwosci</h2>
+            <p>Dodatkowe funkcje, ktore mozesz dolaczyc do dowolnego planu. Placisz tylko za realna wartosc, ktora przyniesz Twojemu sklepowi.</p>
+        </div>
+
+        <div class="premium-cards">
+
+            <!-- CARD: AI Sales Chat -->
+            <div class="premium-card">
+                <div class="card-accent card-accent--chat"></div>
+                <div class="card-body">
+
+                    <div class="card-icon">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="6" width="28" height="22" rx="0" stroke="#2D2D29" stroke-width="2.2" fill="none"/>
+                            <rect x="10" y="12" width="28" height="22" rx="0" stroke="#2D2D29" stroke-width="2.2" fill="#00FFE9" fill-opacity="0.2"/>
+                            <circle cx="20" cy="21" r="2" fill="#2D2D29"/>
+                            <circle cx="26" cy="21" r="2" fill="#2D2D29"/>
+                            <circle cx="32" cy="21" r="2" fill="#2D2D29"/>
+                        </svg>
+                    </div>
+
+                    <h3 class="card-name">AI Sales Chat</h3>
+                    <p class="card-tagline">Asystent AI, ktory sprzedaje i obsluguje klientow 24/7. Placisz tylko za rozmowy, ktore przyniosly wartosc.</p>
+
+                    <div class="card-pricing">
+                        <div class="price-label">ABONAMENT MIESIĘCZNY</div>
+                        <div class="price-row">
+                            <span class="price-amount">49 zl</span>
+                            <span class="price-unit">netto / mies.</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-label" style="margin-top: 16px;">ZA KONWERSACJĘ OBSŁUGOWANĄ PRZEZ AI</div>
+                        <div class="price-row">
+                            <span class="price-amount">2 zl</span>
+                            <span class="price-unit">za rozmowe (bez limitu odpowiedzi)</span>
+                        </div>
+                    </div>
+
+                    <div class="card-note">
+                        <p><strong>Nie placisz za puste interakcje.</strong> Oplata naliczana jest tylko wtedy, gdy AI faktycznie obsluzy rozmowe — doradzi, poleci produkt lub rozwiaze pytanie klienta.</p>
+                    </div>
+
+                    <ul class="card-benefits">
+                        <li><strong>Rekomenduje produkty</strong> i doradza klientom w czasie rzeczywistym</li>
+                        <li><strong>Rozwiazuje ok. 60% rozmow</strong> samodzielnie — bez udzialu konsultanta</li>
+                        <li><strong>Odciaza zespol supportu</strong> — przekazuje tylko rozmowy wymagajace czlowieka</li>
+                        <li>Bez oplat za rozmowy przejete przez konsultanta</li>
+                        <li>Jedna oplata za cala konwersacje, niezaleznie od liczby wiadomosci</li>
+                    </ul>
+
+                    <div class="card-benchmarks">
+                        <div class="benchmark">
+                            <div class="benchmark-value benchmark-value--chat">+15-30%</div>
+                            <div class="benchmark-label">wzrost konwersji<br>w sesjach z chatem</div>
+                        </div>
+                        <div class="benchmark">
+                            <div class="benchmark-value benchmark-value--chat">+5-20%</div>
+                            <div class="benchmark-label">wyzsza srednia<br>wartosc koszyka</div>
+                        </div>
+                        <div class="benchmark">
+                            <div class="benchmark-value benchmark-value--chat">10%</div>
+                            <div class="benchmark-label">odzyskanych<br>porzuconych koszykow</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <a href="#zapytaj-o-wycene" class="cta-primary">
+                        Wlacz AI Sales Chat <span class="arrow">--></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD: Reviews -->
+            <div class="premium-card">
+                <div class="card-accent card-accent--reviews"></div>
+                <div class="card-body">
+
+                    <div class="card-icon">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="20,2 25,14 38,16 28,26 31,38 20,32 9,38 12,26 2,16 15,14" stroke="#2D2D29" stroke-width="2.2" fill="#AC81DB" fill-opacity="0.2"/>
+                        </svg>
+                    </div>
+
+                    <h3 class="card-name">Reviews</h3>
+                    <p class="card-tagline">Automatycznie zbieraj opinie od klientow po zakupie. Buduj zaufanie i zwieksz konwersje — bez dodatkowej pracy.</p>
+
+                    <div class="card-pricing">
+                        <div class="price-label">ABONAMENT MIESIĘCZNY</div>
+                        <div class="price-row">
+                            <span class="price-amount">49 zl</span>
+                            <span class="price-unit">netto / mies.</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-label" style="margin-top: 16px;">ZA ZAMÓWIENIE</div>
+                        <div class="price-row">
+                            <span class="price-amount">1 zl</span>
+                            <span class="price-unit">za zamowienie w miesiacu rozliczeniowym</span>
+                        </div>
+                    </div>
+
+                    <div class="card-note">
+                        <p><strong>Placisz za efekt, nie za dzialania.</strong> Nie naliczamy oplat za liczbę zebranych opinii, wysłanych e-maili ani prósb o opinie. Bez limitu na wysylki.</p>
+                    </div>
+
+                    <ul class="card-benefits">
+                        <li><strong>Automatyczne zbieranie opinii</strong> po kazdym zakupie — zero pracy recznej</li>
+                        <li><strong>Prosty, przewidywalny cennik</strong> dopasowany do skali Twojego biznesu</li>
+                        <li><strong>Bez limitu na wysylki e-mail</strong> — wysylaj tyle prosb, ile potrzebujesz</li>
+                        <li>Pierwszy miesiac: tylko 49 zl, bez oplaty za zamowienia</li>
+                        <li>Koszt rosnie razem z Twoim biznesem — nie przepłacasz w slabszych okresach</li>
+                    </ul>
+
+                    <div class="card-benchmarks">
+                        <div class="benchmark">
+                            <div class="benchmark-value benchmark-value--reviews">49 zl</div>
+                            <div class="benchmark-label">na start<br>bez ukrytych kosztow</div>
+                        </div>
+                        <div class="benchmark">
+                            <div class="benchmark-value benchmark-value--reviews">0 zl</div>
+                            <div class="benchmark-label">za wyslane<br>e-maile z opiniami</div>
+                        </div>
+                        <div class="benchmark">
+                            <div class="benchmark-value benchmark-value--reviews">1 zl</div>
+                            <div class="benchmark-label">za zamowienie<br>w Twoim sklepie</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <a href="#zapytaj-o-wycene" class="cta-primary">
+                        Wlacz Reviews <span class="arrow">--></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SECTION 2: How it works -->
+<section class="how-section">
+    <div class="how-inner">
+
+        <div class="how-header">
+            <h3>Jak to dziala?</h3>
+            <p>Prosta aktywacja, transparentne rozliczenia i pelna kontrola nad kosztami.</p>
+        </div>
+
+        <div class="how-grid">
+            <div class="how-step">
+                <div class="how-step-number">1</div>
+                <h4>Wybierz funkcje</h4>
+                <p>Dodaj AI Sales Chat lub Reviews do swojego planu edrone. Mozesz wlaczyc jedna lub obie.</p>
+            </div>
+            <div class="how-step">
+                <div class="how-step-number">2</div>
+                <h4>Placisz za wartosc</h4>
+                <p>Oplaty naliczane sa tylko za realne efekty — rozmowy obsluzone przez AI lub zamowienia w Twoim sklepie.</p>
+            </div>
+            <div class="how-step">
+                <div class="how-step-number">3</div>
+                <h4>Skalujesz bez ryzyka</h4>
+                <p>Gdy sprzedajesz wiecej, placisz wiecej. W slabszym miesiacu — koszty spadaja automatycznie.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SECTION 3: Example Calculations -->
+<section class="example-section">
+    <div class="example-inner">
+
+        <div class="example-header">
+            <h3>Przyklad: sklep ze 100 000 uzytkownikow</h3>
+            <p>Orientacyjne koszty miesieczne dla sredniego sklepu e-commerce</p>
+        </div>
+
+        <div class="example-grid">
+
+            <!-- AI Sales Chat Example -->
+            <div class="example-card">
+                <div class="example-card-label">AI SALES CHAT</div>
+                <div class="example-card-title">od <span>169 zl</span> do <span>649 zl</span> / mies.</div>
+
+                <div class="example-row">
+                    <span class="example-row-label">Abonament</span>
+                    <span class="example-row-value">49 zl</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-row-label">0,1% ruchu → ~100 konwersacji</span>
+                    <span class="example-row-value">~60 obsluzonych przez AI</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-row-label">Koszt konwersacji AI</span>
+                    <span class="example-row-value">60 x 2 zl = 120 zl</span>
+                </div>
+
+                <div class="example-total">
+                    <span class="example-total-label">Razem (0,1% ruchu)</span>
+                    <span>
+                        <span class="example-total-value">~169 zl</span>
+                        <span class="example-total-unit"> netto/mies.</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Reviews Example -->
+            <div class="example-card">
+                <div class="example-card-label">REVIEWS</div>
+                <div class="example-card-title">Przyklad: <span>500 zamowien</span> / mies.</div>
+
+                <div class="example-row">
+                    <span class="example-row-label">Abonament</span>
+                    <span class="example-row-value">49 zl</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-row-label">Pierwszy miesiac</span>
+                    <span class="example-row-value">tylko 49 zl (0 zl za zamowienia)</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-row-label">Kolejne miesiace: 500 zamowien</span>
+                    <span class="example-row-value">500 x 1 zl = 500 zl</span>
+                </div>
+
+                <div class="example-total">
+                    <span class="example-total-label">Razem (od 2. miesiaca)</span>
+                    <span>
+                        <span class="example-total-value">~549 zl</span>
+                        <span class="example-total-unit"> netto/mies.</span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SECTION 4: Final CTA -->
+<section class="final-cta-section">
+    <div class="final-cta-inner">
+        <h3>Chcesz wiedziec wiecej?</h3>
+        <p>Porozmawiaj z naszym doradca i dowiedz sie, ktore funkcje premium najlepiej pasuja do Twojego sklepu.</p>
+        <a href="#zapytaj-o-wycene" class="cta-black">
+            Umow spotkanie <span class="arrow">--></span>
+        </a>
+    </div>
+</section>
+
+
+</body>
+</html>
